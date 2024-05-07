@@ -1,2 +1,2 @@
 # igaming-careers
-A careers webiste for ffinding igaming jobs
+A careers webiste for finding igaming jobs
