@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{jobs.title}} - Igaming Careers</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for background color and box shadow */
+        body {
+            background-color: #333333; /* Background color */
+        }
+        .container-box-shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
+            padding: 20px;
+            margin-top: 20px;
+            background-color: transparent; /* Set to transparent */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include navigation -->
+    {% include 'nav.html' %}
+
+    <!-- Include banner -->
+    {% include 'banner.html' %}
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="container-box-shadow">
+            <h1 class="text-center mt-2 mb-4">Igaming Careers in Malta</h1> 
+
+            <h3>{{jobs.title}}</h3>  
+
+            <h3>Location</h3>
+            <p>{{jobs.location}}</p>
+
+    
+            <h3>Salary</h3>
+            <p>{{jobs.currency}} {{jobs.salary}}</p>
+            <h3>Responsibilities</h3>  
+            <ul> 
+            {% for line in jobs.responsibilities.split("\n") %}            
+                <li>{{line}}</li>   
+                {% endfor %}
+            </ul>
+             <h3>Requirements</h3>
+            <ul>
+                {% for line in jobs.requirements.split("\n") %}
+                    <li>{{line}}</li>
+                {% endfor %}
+            </ul>
+        
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
